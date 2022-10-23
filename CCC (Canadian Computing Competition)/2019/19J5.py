@@ -54,7 +54,7 @@ def solve(): #TODO implement recursion
             makeChildren(root)
             q.extend(root.children) #add root's children to queue as sep elements
         else:
-            for _ in range(len(q)):
+            for _ in range(len(q)): 
                 t = q.pop(0) #find next in queue
                 if (i+1==int(steps)+1) and (t.data == search): #-1 as the child must have alr been created || steps = required and match
                     for i in range(int(steps)):
@@ -69,7 +69,7 @@ def solve(): #TODO implement recursion
                     return 0
                 makeChildren(t) #operate on next in queue
                 q.extend(t.children) #add those children to back of queue
-            
+             
 solve()
 
 
