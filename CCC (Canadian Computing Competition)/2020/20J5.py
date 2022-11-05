@@ -1,5 +1,6 @@
 y = int(input())
 x = int(input())
+print(x, y)
 grid = []
 t = [1, 1]
 cache = []
