@@ -33,11 +33,27 @@ int main(){
 }
 
 void solve(){
-    vector<vector<int>> adj_list; // adjacency list
-    int p, ins; cin >> p >> ins;
-    vector<int> ppl {0};
-    for(int x = 1; x != ins; ++p){
-        ppl.PB(x);
+    int people; cin >> people;
+    int actions; cin >> actions;
+    vector<vector<int>> adj_list(people+1);
+    for(int i = 1; i < people+1; ++i){
+        adj_list[i] = {i};
     }
-    // ajacency list
+    for(int x = 0; x < actions; ++x){
+        int operation, user, target; cin >> operation >> target >> user;
+        if(operation == 1){
+            adj_list[user].PB(target);
+        }else if(operation == 2){
+            vector<int> &temp = adj_list[user];
+            temp.erase(remove(temp.begin(), temp.end(), target), temp.end()); // erase-remove idiom
+        }else {
+            vector<int> &temp_1 = adj_list[user];
+            vector<int> &temp_2 = adj_list[target];
+            if((find(begin(temp_1), end(temp_1), target) != end(temp_1)) && (find(begin(temp_2), end(temp_2), user) != end(temp_2))) {
+                cout << "Yes" << "\n";
+            }else{
+                cout << "No" << "\n";
+            }
+        }
+    }
 }
