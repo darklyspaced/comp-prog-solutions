@@ -6,6 +6,7 @@
 #include <map>
 #include <deque> // for stack and queue
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -21,7 +22,6 @@ typedef pair<int, int> pii;
 #define SIZE(v) v.size()
 #define ALL(v) v.begin(), v.end()
 
-
 void solve();
 
 int main(){
@@ -33,5 +33,26 @@ int main(){
 }
 
 void solve(){
+    ifstream file;
+    string line;
+    vector<int> calories;
+    int current = 0;
+    file.open("day_1.txt");
 
+    while(file){
+        getline(file, line);
+        if(line.empty()){
+            calories.PB(current);
+            current = 0;
+        }else{
+            current += stoi(line);
+        }
+    }
+    sort(calories.begin(), calories.end());
+    int ans = 0;
+    REP(i, 3){
+        ans += calories[calories.size() - (i+1)];
+    }
+    cout << ans;
+    file.close();
 }
