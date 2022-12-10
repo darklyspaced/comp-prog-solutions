@@ -34,5 +34,31 @@ int main(){
 }
 
 void solve(){
+    map<char, int> points = {{'A', 1}, {'B', 2}, {'C', 3}};
+    map<char, char> loss = {{'A', 'C'}, {'B', 'A'}, {'C', 'B'}};
+    map<char, char> win = {{'A', 'B'}, {'B', 'C'}, {'C', 'A'}};
+    int ans = 0;
 
+    ifstream infile;
+    infile.open("day_2.txt");
+    string line;
+
+    while(getline(infile, line)){
+        if(line[2] == 'Y'){
+            ans += points.at(line[0]) + 3; //draw
+        }else{
+            switch (line[2]){
+                case 'X':
+                    ans += points.at(loss.at(line[0])) + 0;
+                    break;
+                case 'Z':
+                    ans += points.at(win.at(line[0])) + 6;
+                    break;
+            }
+        }
+    }
+
+    cout << ans;
+    infile.close();
 }
+
