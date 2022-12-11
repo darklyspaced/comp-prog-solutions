@@ -7,6 +7,7 @@
 #include <deque> // for stack and queue
 #include <algorithm>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -24,6 +25,7 @@ typedef pair<int, int> pii;
 
 
 void solve();
+bool contains(vector<int> &set, vector<int> &subset);
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -34,11 +36,41 @@ int main(){
 }
 
 void solve(){
+    string line;
+    string token;
     ifstream infile;
+    int ans = 0;
     infile.open("day_4.txt");
 
     while(getline(infile, line)){
+        istringstream ss(line);
+        vector<string> temp;
+        vector<int> p1, p2;
+        map<int, vector<int>> map = {{1, p1}, {2, p2}};
+        while(getline(ss, token, ',')){
+            temp.push_back(token);
+        }
+        
+        int counter = 0;
 
+        for (string x : temp){
+            ++counter;
+            istringstream input(x);
+            int start, finish; char buffer;
+            input >> start >> buffer >> finish;
+            for(int i = start; i < finish + 1; ++i){
+                map.at(counter).push_back(i);
+            }
+        }
+        vector<int> destination;
+        set_intersection(map.at(1).begin(), map.at(1).end(),
+                         map.at(2).begin(), map.at(2).end(),
+                         back_inserter(destination));
+
+        if (destination.size() > 0){
+            ans++;
+        }
     }
+    cout << ans << endl;
 }
 
