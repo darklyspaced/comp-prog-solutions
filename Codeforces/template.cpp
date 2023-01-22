@@ -7,21 +7,9 @@
 #include <deque> // for stack and queue
 #include <algorithm>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
-
-typedef vector<int> vi;
-typedef long long ll;
-typedef pair<int, int> pii;
-
-#define PB push_back
-#define F first
-#define S second
-#define FOR(var, init, reps) for(int(var) = (init); (var) < (reps); ++(var))
-#define REP(var, reps) FOR(var, 0, reps)
-#define SIZE(v) v.size()
-#define ALL(v) v.begin(), v.end()
-
 
 void solve();
 
