@@ -1,2 +1,2 @@
-# comp-coding-solutions
-A collection of solutions for various competitions and problems in Python and C++
+# Competitive Programming Solutions
+An archive of solutions of for various competitive programming compeitions.
