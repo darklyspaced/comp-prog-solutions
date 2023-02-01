@@ -1,13 +1,19 @@
-#include <vector>
 #include <iostream>
+#include <algorithm>
 #include <string>
-#include <cmath>
+#include <stdio.h>
+#include <stack>
+#include <queue>
 #include <set>
 #include <map>
-#include <deque> // for stack and queue
-#include <algorithm>
-#include <fstream>
-#include <sstream>
+#include <set>
+#include <unordered_map>
+#include <vector>
+#include <list>
+#include <utility>
+#include <functional>
+#include <numeric>
+#define rep(i,n) for (int i = 0; i < (n); ++i)
 
 using namespace std;
 
@@ -18,7 +24,6 @@ int main(){
     cin.tie(NULL);
     cout.tie(NULL);
     solve();
-    // cerr<<"Executed in: "<<((float)clock()/CLOCKS_PER_SEC)*1000<<"ms"<<"\n";
 }
 
 void solve(){
