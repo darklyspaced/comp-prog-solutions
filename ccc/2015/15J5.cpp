@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cmath>
 #include <functional>
 #include <iostream>
 #include <list>
@@ -24,4 +25,15 @@ int main() {
   cout.tie(NULL);
   solve();
 }
-void solve() {}
+
+void solve() {
+  int n;
+  cin >> n;
+  int k;
+  cin >> k;
+  if (k == 1 || k == n) {
+    cout << 1;
+    return;
+  } else {
+  }
+}

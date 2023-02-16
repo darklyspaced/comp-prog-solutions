@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <utility>
 #include <vector>
+#include <sstream>
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 
 using namespace std;
@@ -24,4 +25,12 @@ int main() {
   cout.tie(NULL);
   solve();
 }
-void solve() {}
+
+void solve() {
+    int X; cin >> X;
+    rep (_, X) {
+        string line; getline(cin, line);
+        stringstream temp(line);
+        temp >> 
+    }
+}
